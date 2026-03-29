@@ -8,12 +8,25 @@ document.addEventListener('click', (e) => {
         if(!text) return;
 
         const task = document.createElement('div');
-        task.appendChild(document.createTextNode(text));
         task.className = 'task';
         task.setAttribute('draggable', true);
 
+        const taskContent = document.createElement('span');
+        taskContent.textContent = text;
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.className = 'delete-btn';
+
+        task.appendChild(taskContent);
+        task.appendChild(deleteBtn);
+
         const tasks = e.target.previousElementSibling;
         tasks.appendChild(task);
+    }
+
+    if(e.target.classList.contains('delete-btn')) {
+        e.target.parentElement.remove();
     }
 })
 

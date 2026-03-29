@@ -55,13 +55,16 @@ h1 {
 
 /* Task Card */
 .task {
-  background: #27272a; /* zinc-800 */
+  background: #27272a; 
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   cursor: grab;
   transition: 0.2s;
   border: 1px solid transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .task:hover {
@@ -72,6 +75,21 @@ h1 {
 .task.dragging {
   opacity: 0.5;
   color: crimson;
+}
+
+.delete-btn {
+    border: none;
+    color: #ef4444; /* red-500 */
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10%;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ef4444;
+    color: #f4f4f5;
 }
 
 /* Add Button */
